@@ -15,7 +15,9 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Lock dependencies version
-      run: pipenv sync
+      run: | 
+        python -m pip install pipenv
+        pipenv sync
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
