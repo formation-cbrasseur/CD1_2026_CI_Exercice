@@ -21,12 +21,12 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+    - name: Run test with pytest
+      run: |
+        pytest
     - name: Analysing the code with bandit
       run: |
         bandit -r . -x test_counter.py
     - name: Analysing the code with pip-audit
       run: |
         pip-audit
-    - name: Run test with pytest
-      run: |
-        pytest
