@@ -20,7 +20,6 @@ jobs:
         pip install -r requirements.txt
     - name: Lock dependencies version
       run: | 
-        python -m pip install pipenv
         pipenv --python 3.10
         pipenv sync --dev
     - name: Analysing the code with pylint
